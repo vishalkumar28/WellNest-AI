@@ -3,8 +3,8 @@
 import { User } from '../types';
 import axios from 'axios';
 
-// API base URL - using relative path for proxy
-const API_URL = '/api';
+// API base URL from environment variable
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002/api';
 
 export const authApi = {
   auth: {
