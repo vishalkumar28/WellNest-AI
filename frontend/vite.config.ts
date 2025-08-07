@@ -18,6 +18,15 @@ export default defineConfig({
       'react-is': 'react-is'
     }
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  },
   ssr: {
     noExternal: []
   },

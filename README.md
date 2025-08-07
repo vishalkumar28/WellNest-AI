@@ -40,14 +40,34 @@ Visit the live application: [WellNest](https://your-username.github.io/WellNest/
 - npm or yarn
 - PostgreSQL (for backend)
 
-### Frontend Setup
+### Project Structure
+This project is organized into three main directories:
+
+- **frontend**: Contains all frontend code (React, TypeScript)
+- **backend**: Contains all backend code (Node.js, Express)
+- **shared**: Contains code shared between frontend and backend
+
+### Setup
 ```bash
 # Clone the repository
 git clone https://github.com/your-username/WellNest.git
 cd WellNest
 
-# Install dependencies
+# Install dependencies for all workspaces
 npm install
+
+# Run both frontend and backend in development mode
+npm run dev
+
+# Run only frontend
+npm run dev:frontend
+
+# Run only backend
+npm run dev:backend
+
+# Build all workspaces
+npm run build
+```
 
 # Start development server
 npm run dev
