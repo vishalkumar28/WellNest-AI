@@ -1,7 +1,13 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-require('dotenv').config();
+
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import dotenv from 'dotenv';
+
+
+// Configure dotenv
+dotenv.config();
+
 
 // Set environment variables if not loaded from .env
 if (!process.env.JWT_SECRET) {
@@ -20,13 +26,16 @@ console.log('JWT_SECRET:', process.env.JWT_SECRET ? 'Loaded' : 'NOT LOADED');
 console.log('DATABASE_URL:', process.env.DATABASE_URL ? 'Loaded' : 'NOT LOADED');
 console.log('PORT:', process.env.PORT);
 
-const chatRoutes = require('./routes/chat');
-const wellnessRoutes = require('./routes/wellness');
-const authRoutes = require('./routes/auth');
-const errorHandler = require('./middleware/errorHandler');
+
+import chatRoutes from './routes/chat.js';
+import wellnessRoutes from './routes/wellness.js';
+import authRoutes from './routes/auth.js';
+import errorHandler from './middleware/errorHandler.js';
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 // Middleware
 app.use(helmet());
@@ -51,4 +60,4 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-module.exports = app;
+export default app;
