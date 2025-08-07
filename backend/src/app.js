@@ -27,6 +27,7 @@ console.log('DATABASE_URL:', process.env.DATABASE_URL ? 'Loaded' : 'NOT LOADED')
 console.log('PORT:', process.env.PORT);
 
 
+// Import routes and middleware using ES modules
 import chatRoutes from './routes/chat.js';
 import wellnessRoutes from './routes/wellness.js';
 import authRoutes from './routes/auth.js';
