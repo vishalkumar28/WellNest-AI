@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 
 
 // Configure dotenv
-dotenv.config();
+
 
 
 // Set environment variables if not loaded from .env
@@ -17,7 +17,7 @@ if (!process.env.DATABASE_URL) {
   process.env.DATABASE_URL = 'postgresql://neondb_owner:npg_CHI1fq5PdBpl@ep-morning-block-a1btyrr7-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require';
 }
 if (!process.env.PORT) {
-  process.env.PORT = '3001';
+  process.env.PORT = '3002';
 }
 
 // Debug: Check if environment variables are loaded
@@ -28,14 +28,14 @@ console.log('PORT:', process.env.PORT);
 
 
 // Import routes and middleware using ES modules
-import chatRoutes from './routes/chat.js';
-import wellnessRoutes from './routes/wellness.js';
-import authRoutes from './routes/auth.js';
-import errorHandler from './middleware/errorHandler.js';
+import chatRoutes from './src/routes/chat.js';
+import wellnessRoutes from './src/routes/wellness.js';
+import authRoutes from './src/routes/auth.js';
+import errorHandler from './src/middleware/errorHandler.js';
 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 
 // Middleware
@@ -67,5 +67,5 @@ app.use(errorHandler);
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
-
+dotenv.config();
 export default app;
