@@ -14,7 +14,7 @@ A modern wellness tracking application built with React, TypeScript, and AI-powe
 
 ## 🚀 Live Demo
 
-Visit the live application: [WellNest]([https://your-username.github.io/WellNest/](https://wellnest-ai-frontend.onrender.com/))
+Visit the live application: [WellNest](https://wellnest-ai-frontend.onrender.com/)
 
 ## 🛠️ Tech Stack
 
